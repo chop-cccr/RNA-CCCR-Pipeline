@@ -1,7 +1,5 @@
 
 
-
-**README.md**
 # STAR + RSEM (human/mouse) – Nextflow DSL2
 
 
