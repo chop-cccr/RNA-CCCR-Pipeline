@@ -3,7 +3,7 @@
 # STAR + RSEM (human/mouse) – Nextflow DSL2
 
 
-A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantifying with [RSEM]. Works on laptops or HPC with Docker/Singularity/Conda.
+A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantifying with [RSEM]. Works on  HPC with Docker/Singularity/Conda. Also a built in docker image can be used for deployment.
 
 
 ## Features
@@ -13,14 +13,24 @@ A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantif
 - ✅ Paired‑end or single‑end reads
 - ✅ Containers (Docker/Singularity) or Conda env
 
+## Steps to make sure it runs smoothly
+1. Make sure you have loaded singulariy. You can load singularity on HPC using:
+     module load singularity
+2.  Make sure you have installed nextflow. You can follow instructions on the nextflow webpage:https://www.nextflow.io/docs/latest/install.html
+3.  Add the path where nextflow is to your bash (Follow instructions in Step 2).
+    For bash :
+    export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
+     
 
 ## Quick start
 ```bash
-# Clone and test on a small sample
-nextflow run main.nf -profile standard \
+## For HPC (singularity needs to be loaded)
+
+nextflow run main.nf -profile singularity \
   --samplesheet assets/samplesheet.example.csv \
   --species human \
   -resume
+
 With Docker
 nextflow run main.nf -profile docker \
   --samplesheet my_samples.csv \
