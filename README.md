@@ -5,7 +5,13 @@
 
 A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantifying with [RSEM]. Works on  HPC with Docker/Singularity/Conda. Also a built in docker image can be used for deployment.
 
-##Introduction:
+# Introduction:
+STAR (Spliced Transcripts Alignment to a Reference) is an ultrafast splice-aware aligner for RNA-seq that maps reads to genomes, detects canonical/non-canonical splice junctions, and supports two-pass mapping to improve novel junction discovery; it’s commonly used upstream of quantifiers like RSEM. 
+
+RSEM (RNA-Seq by Expectation-Maximization) estimates gene- and isoform-level expression from RNA-seq data, modeling fragment/length effects and outputting TPM/FPKM and expected counts. Works with reference transcriptomes (or de novo assemblies) and supports single/paired-end and stranded protocols
+
+Using this pipeline, user can either create new indexes of genomes or use pre-existing ones. 
+
 
 ## Features
 - ✅ Human or mouse presets; or fully custom references
