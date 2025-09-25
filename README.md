@@ -88,6 +88,8 @@ nextflow run main.nf -profile slurm,singularity \
   --species human \
   --stranded reverse \
   -with-report report.html -with-trace -with-timeline timeline.html -resume
+```
+
 Notes & tips
 
 Detects .gz reads and uses zcat automatically.
@@ -135,7 +137,7 @@ Add UMI handling (e.g., umi_tools) if needed.
 Add strandedness auto‑detection (e.g., RSeQC infer_experiment.py).
 
 If you share your GitHub link or upload your current main.nf/configs, I can transplant this structure and keep your commit history while minimizing breaking changes.
-```
+
 
 ## Reference:
 1. Dobin A, Davis CA, Schlesinger F, et al. STAR: ultrafast universal RNA-seq aligner. Bioinformatics 29(1):15–21 (2013). doi:10.1093/bioinformatics/bts635.
