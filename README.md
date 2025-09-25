@@ -42,30 +42,24 @@ With Docker
 nextflow run main.nf -profile docker \
   --samplesheet my_samples.csv \
   --species mouse
-With Singularity (HPC)
-nextflow run main.nf -profile slurm,singularity \
-  --samplesheet my_samples.csv \
-  --species human \
-  -resume
+
 With Conda
 nextflow run main.nf -profile conda \
   --samplesheet my_samples.csv \
   --species human
-Inputs
 
+
+Inputs
 --samplesheet CSV with columns:
 
 sample_id (unique)
-
 fastq_1 (path to R1)
-
 fastq_2 (optional path to R2, leave blank for SE)
-
 read_group (optional; default added if missing)
 
 --species: human or mouse. For other species, use custom references.
 
-Reference options
+#Reference options
 
 Presets (edit in main.nf): hard‑coded cluster paths for GRCh38/GRCm39.
 
