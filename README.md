@@ -59,7 +59,7 @@ read_group (optional; default added if missing)
 
 --species: human or mouse. For other species, use custom references.
 
-#Reference options
+Reference options
 
 Presets (edit in main.nf): hard‑coded cluster paths for GRCh38/GRCm39.
 
