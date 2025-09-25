@@ -82,12 +82,7 @@ results/
 │   └── <sample>.isoforms.results
 ├── star_index/        # if build_index=true
 └── rsem_ref/          # if build_index=true
-Typical HPC (Slurm) usage
-nextflow run main.nf -profile slurm,singularity \
-  --samplesheet samplesheet.csv \
-  --species human \
-  --stranded reverse \
-  -with-report report.html -with-trace -with-timeline timeline.html -resume
+
 ```
 
 Notes & tips
