@@ -5,6 +5,7 @@
 
 A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantifying with [RSEM]. Works on  HPC with Docker/Singularity/Conda. Also a built in docker image can be used for deployment.
 
+##Introduction:
 
 ## Features
 - ✅ Human or mouse presets; or fully custom references
@@ -135,3 +136,7 @@ Add UMI handling (e.g., umi_tools) if needed.
 Add strandedness auto‑detection (e.g., RSeQC infer_experiment.py).
 
 If you share your GitHub link or upload your current main.nf/configs, I can transplant this structure and keep your commit history while minimizing breaking changes.
+
+
+Reference:
+Li B, Dewey CN. RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome. BMC Bioinformatics 12, 323 (2011). doi:10.1186/1471-2105-12-323
