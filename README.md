@@ -21,7 +21,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 - ✅ Containers (Docker/Singularity) or Conda env
 
 ## Steps to make sure it runs smoothly
-1. Make sure you have loaded singulariy. You can load singularity on HPC using:
+1. Make sure you have loaded singularty. You can load singularity on HPC using:
      module load singularity
 2.  Make sure you have installed nextflow. You can follow instructions on the nextflow webpage:https://www.nextflow.io/docs/latest/install.html
 3.  Add the path where nextflow is to your bash (Follow instructions in Step 2).
