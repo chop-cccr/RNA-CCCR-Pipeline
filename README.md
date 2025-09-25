@@ -6,9 +6,9 @@
 A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantifying with [RSEM]. Works on  HPC with Docker/Singularity/Conda. Also a built in docker image can be used for deployment.
 
 # Introduction:
-STAR (Spliced Transcripts Alignment to a Reference) is an ultrafast splice-aware aligner for RNA-seq that maps reads to genomes, detects canonical/non-canonical splice junctions, and supports two-pass mapping to improve novel junction discovery; it’s commonly used upstream of quantifiers like RSEM. 
+STAR (Spliced Transcripts Alignment to a Reference) [1] is an ultrafast splice-aware aligner for RNA-seq that maps reads to genomes, detects canonical/non-canonical splice junctions, and supports two-pass mapping to improve novel junction discovery; it’s commonly used upstream of quantifiers like RSEM. 
 
-RSEM (RNA-Seq by Expectation-Maximization) estimates gene- and isoform-level expression from RNA-seq data, modeling fragment/length effects and outputting TPM/FPKM and expected counts. Works with reference transcriptomes (or de novo assemblies) and supports single/paired-end and stranded protocols
+RSEM (RNA-Seq by Expectation-Maximization) [2] estimates gene- and isoform-level expression from RNA-seq data, modeling fragment/length effects and outputting TPM/FPKM and expected counts. Works with reference transcriptomes (or de novo assemblies) and supports single/paired-end and stranded protocols
 
 Using this pipeline, user can either create new indexes of genomes or use pre-existing ones. 
 
@@ -116,7 +116,6 @@ Missing genomeDir: Provide --star_index or use --build_index.
 
 Cannot allocate memory: raise process.memory for STAR/RSEM in conf/base.config.
 
-Single‑end data: leave fastq_2 blank.
 
 
 
@@ -144,5 +143,6 @@ Add strandedness auto‑detection (e.g., RSeQC infer_experiment.py).
 If you share your GitHub link or upload your current main.nf/configs, I can transplant this structure and keep your commit history while minimizing breaking changes.
 ```
 
-Reference:
-Li B, Dewey CN. RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome. BMC Bioinformatics 12, 323 (2011). doi:10.1186/1471-2105-12-323
+## Reference:
+1. Dobin A, Davis CA, Schlesinger F, et al. STAR: ultrafast universal RNA-seq aligner. Bioinformatics 29(1):15–21 (2013). doi:10.1093/bioinformatics/bts635.
+2. Li B, Dewey CN. RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome. BMC Bioinformatics 12, 323 (2011). doi:10.1186/1471-2105-12-323
