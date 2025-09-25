@@ -27,7 +27,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 3.  Add the path where nextflow is to your bash (Follow instructions in Step 2).
     For bash :
     export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
-     
+4. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 
 ## Quick start
 ```bash
