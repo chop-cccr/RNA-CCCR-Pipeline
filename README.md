@@ -44,13 +44,14 @@ module load singularity
 ```
 
 ## Input files
-``` bash
 In the assets folder, you will find an example samplesheet that the pipeline can accept.
+``` bash
+
 sample,fastq1,fastq2,read_group
 USER_SAMPLE_ID,/mnt/isilon/cccr_bfx/Pipelines/Independent/data/SRR2557083_1.fastq.gz,/mnt/isilon/cccr_bfx/Pipelines/Independent/data/SRR2557083_2.fastq.gz,ID:ANY_ID
-
+```
 USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can same or different.
-``` 
+
 ## Quick start
 ```bash
 ## For HPC (singularity needs to be loaded)
