@@ -59,7 +59,12 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can same or 
 nextflow run main.nf -profile singularity \
   --samplesheet assets/samplesheet.example.csv \
   --species human \
+  --outdir HELLO_HUMAN \
+  --genomeDir ~/Reference/mm10_gencode/mm10STAR/ \
+  --rsem_ref ~/Reference//rsem_index/rsem_mm10  \
+  --threads 10 -profile singularity
   -resume
+
 
 With Docker
 nextflow run main.nf -profile docker \
