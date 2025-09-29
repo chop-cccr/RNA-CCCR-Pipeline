@@ -99,6 +99,8 @@ Custom prebuilt indices:
 Build on the fly from FASTA+GTF:
 
 --build_index --fasta /ref/genome.fa --gtf /ref/genes.gtf [--sjdbOverhang 100]
+```
+``` bash
 Outputs
 RESULT_directory/
 ├── star/
