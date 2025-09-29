@@ -29,6 +29,13 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
     export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
 4. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 
+## MODULES NEEDED
+```bash
+module load STAR
+module load RSEM
+module load samtools
+```
+
 ## Quick start
 ```bash
 ## For HPC (singularity needs to be loaded)
