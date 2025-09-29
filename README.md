@@ -30,6 +30,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 5. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 
 ## MODULES NEEDED
+Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
 ```bash
 #For nextflow
 export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
@@ -41,6 +42,7 @@ module load STAR
 module load samtools
 module load singularity
 ```
+
 
 ## Quick start
 ```bash
