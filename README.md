@@ -87,14 +87,20 @@ Build on the fly from FASTA+GTF:
 
 --build_index --fasta /ref/genome.fa --gtf /ref/genes.gtf [--sjdbOverhang 100]
 Outputs
-results/
+RESULT_directory/
 ├── star/
 │   ├── <sample>.Aligned.sortedByCoord.out.bam
+|   ├── <sample>.Aligned.toTranscriptome.out.bam
 │   ├── <sample>.Aligned.sortedByCoord.out.bam.bai
 │   └── <sample>.Log.final.out
+│   └── <sample>.SJ.out.tab
+│   └── <sample>.ReadsPerGene.out.tab
 ├── rsem/
 │   ├── <sample>.genes.results
 │   └── <sample>.isoforms.results
+├── report/
+    ├── summaries/
+│   ├── <sample>.rsem.summary.tsv 
 ├── star_index/        # if build_index=true
 └── rsem_ref/          # if build_index=true
 
