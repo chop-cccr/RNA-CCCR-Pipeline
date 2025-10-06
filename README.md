@@ -125,25 +125,6 @@ Notes & tips
 
 Detects .gz reads and uses zcat automatically.
 
-Set --stranded forward|reverse|none to match your library.
-
-RSEM expects a prefix (e.g., /ref/rsem/GRCh38.gencode.v40).
-
-For very deep or long reads, increase STAR memory/threads in conf/base.config.
-
-Reproducibility
-
-Prefer -profile docker or singularity for stable tool versions.
-
-The provided envs/rna.yml pins STAR and RSEM for Conda use.
-
-Troubleshooting
-
-Missing genomeDir: Provide --star_index or use --build_index.
-
-Cannot allocate memory: raise process.memory for STAR/RSEM in conf/base.config.
-
-
 
 
 ---
