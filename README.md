@@ -47,6 +47,9 @@ module load singularity
 # To run FASTQC in case FASTQC was installed via conda
 conda activate fastqc 
 
+FASTQC can be installed via conda:
+conda install bioconda::fastqc
+
 ```
 
 ## Input files
