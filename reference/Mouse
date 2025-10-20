@@ -1,1 +1,35 @@
+Mouse STAR index file was created on mm10.fa reference. User should have the following files under their reference directory.
+These are reference files to run STAR:
 
+|   ├── chrLength.txt
+|   ├── chrNameLength.txt
+|   ├── chrName.txt
+|   ├── chrStart.txt
+|   ├── exonGeTrInfo.tab
+|   ├── exonInfo.tab
+|   ├── geneInfo.tab
+|   ├── Genome
+|   ├── genomeParameters.txt
+|   ├── Log.out
+|   ├── SA
+|   ├── SAindex
+|   ├── sjdbInfo.txt
+|   ├── sjdbList.fromGTF.out.tab
+|   ├── sjdbList.out.tab
+|   ├── transcriptInfo.tab
+
+
+For RSEM reference files, please make sure these are the files:
+|   ├── rsem_mm10.1.ebwt
+|   ├── rsem_mm10.2.ebwt
+|   ├── rsem_mm10.3.ebwt
+|   ├── rsem_mm10.4.ebwt
+|   ├── rsem_mm10.chrlist
+|   ├── rsem_mm10.grp
+|   ├── rsem_mm10.idx.fa
+|   ├── rsem_mm10.n2g.idx.fa
+|   ├── rsem_mm10.rev.1.ebwt
+|   ├── rsem_mm10.rev.2.ebwt
+|   ├── rsem_mm10.seq
+|   ├── rsem_mm10.ti
+|   ├── rsem_mm10.transcripts.fa
