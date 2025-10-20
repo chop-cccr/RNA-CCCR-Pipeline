@@ -1,4 +1,3 @@
-
 // main.simple.v2.nf — Minimal STAR + RSEM orchestrator (DSL2), no top-level publishDir
 nextflow.enable.dsl=2
 
@@ -19,15 +18,22 @@ params.strandedness  = params.strandedness  ?: 'unstranded'  // or reverse if dU
 params.genomeDir     = params.genomeDir     ?: null     // REQUIRED
 params.rsem_ref      = params.rsem_ref      ?: null     // REQUIRED (prefix string)
 params.samplesheet   = params.samplesheet   ?: null
+params.rscript       = params.rscript       ?: null
 params.reads         = params.reads         ?: null
 params.pe            = (params.pe in [false,'false',0,'0']) ? false : true
 params.stranded      = params.stranded      ?: 'none'   // none|forward|reverse
 params.read_group    = params.read_group    ?: null     // optional RG text (module-specific)
 params.read_cmd      = params.read_cmd      ?: 'zcat'   // zcat for .gz
 
+
 // ---------------- Modules ----------------
-include { STAR_ALIGN
-        ; RSEM_CALCULATE } from './modules/star_rsem.nf'
+include { STAR_ALIGN ; RSEM_CALCULATE  } from './modules/star_rsem.nf'
+include { samtools_index } from './modules/util.nf'
+include { PREP_STAR_INDEX } from './modules/indexing.nf'
+//include { RSEM_POSTREPORT_MIN } from './modules/make_report.nf'
+//include { RMATS_single_sample } from './modules/rmats.nf'
+include { FASTQC} from './modules/QC.nf'
+include { RSCRIPT_PLOTS } from './modules/star_rsem_plot.nf'
 
 // ---------------- Helpers ----------------
 def inferPairGroup(File f) {
@@ -39,6 +45,7 @@ def inferPairGroup(File f) {
     .replaceAll(/(?i)\.fastq(\.gz)?$/, '')
   return n
 }
+
 
 // ---------------- Validate references early ----------------
 if( !params.genomeDir ) error "Missing --genomeDir (STAR index directory)"
@@ -63,7 +70,6 @@ if( params.samplesheet ) {
 
       if( !r1.exists() ) error "FASTQ not found for sample ${sid}: ${r1}"
       if( params.pe && !r2 ) error "Paired-end requested but fastq2 missing for sample ${sid}"
-
       // read group: prefer column, then param, else synthesize
       def rg_raw = (row.read_group ?: params.read_group)
       def rg     = rg_raw ? rg_raw.toString() : "ID:${sid};SM:${sid}"
@@ -107,13 +113,31 @@ samples_ch = samples_ch.map { it }
 
 // ---------------- Workflow ----------------
 workflow {
+  FASTQC(samples_ch)
   aligned    = STAR_ALIGN( samples_ch, star_index_ch )
-  //quantified = RSEM_CALCULATE( aligned.tx_bam.map{ sid, bam -> tuple(sid,bam) }, rsem_prefix_ch )
-  quantified = RSEM_CALCULATE( aligned.tx_bam, rsem_prefix_ch )
 
-   
-  // If STAR_ALIGN emits multiple outputs, select the primary one via `.out` (or a named emit like `.bam`).
-  //quantified = RSEM_CALCULATE( aligned.bam, rsem_prefix_ch )
-  // If your module names the BAM emit (e.g., `emit: bam`), use:
-  // quantified = RSEM_CALCULATE( aligned.bam, rsem_prefix_ch )
+  samtools_index(aligned.bam)
+  quantified = RSEM_CALCULATE( aligned.tx_bam.map{ sid, bam -> tuple(sid,bam) }, rsem_prefix_ch )
+  //rscript_plots(samples_ch)
+
+   // run the subworkflow
+  //RSEM_POSTREPORT_MIN( quantified )
+                                                            
+  // collect its named outputs
+  //report_pdf_ch = RSEM_POSTREPORT_MIN.out.report_pdf
+  //summaries_ch  = RSEM_POSTREPORT_MIN.out.summaries
+
+
+  // optional: publish or use downstream
+  //report_pdf_ch, summaries_ch = RSEM_POSTREPORT_MIN( quantified )
+
+  // optional: peek
+  //report_pdf_ch.view { "RSEM report -> ${it}" }
+
 }
+                                                                                                                              137,1         Bot
+
+
+
+
+
