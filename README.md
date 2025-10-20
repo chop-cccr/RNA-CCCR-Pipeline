@@ -43,7 +43,6 @@ module load STAR
 module load samtools
 module load singularity
 
-
 # To run FASTQC in case FASTQC was installed via conda
 conda activate fastqc 
 
