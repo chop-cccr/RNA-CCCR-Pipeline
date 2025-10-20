@@ -55,27 +55,26 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can same or 
 
 ## Quick start
 ```bash
-## For HPC (singularity needs to be loaded)
+## For HPC (Load singularity)
 
-nextflow run main.nf -profile singularity \
-  --samplesheet assets/samplesheet.example.csv \
-  --species human \
-  --outdir HELLO_HUMAN \
-  --genomeDir ~/Reference/mm10_gencode/mm10STAR/ \
-  --rsem_ref ~/Reference//rsem_index/rsem_mm10  \
-  --threads 10 -profile singularity
-  -resume
+    nextflow run main_final.nf \
+    -c  nextflow.ALIGN.config \
+    --samplesheet ./assets/samplesheet.example.csv \
+    --read_group TEST  \
+    --outdir ./HELLO_HUMAN  \
+    --genomeDir ./reference/Mouse/Reference/mm10_gencode/mm10STAR/  \
+    --rsem_ref ./reference/Mouse/rsem_index/rsem_mm10  \
+    --threads 10 -profile singularity -resume
 
 
+** In case of --genomeDir :  add the path to the correct species STAR reference 
+              --rsem_ref  :  add the path to the correct species RSEM reference 
+
+(Under construction)
 With Docker
 nextflow run main.nf -profile docker \
   --samplesheet my_samples.csv \
   --species mouse
-
-With Conda
-nextflow run main.nf -profile conda \
-  --samplesheet my_samples.csv \
-  --species human
 
 
 Inputs
