@@ -22,12 +22,13 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 
 ## Steps to make sure it runs smoothly
 1. Make sure you have loaded singularty.
-2. Make sure you have also loaded Java version higher or similar to mentioned in the nextflow instructions manual
-3. Make sure you have installed nextflow. You can follow instructions on the nextflow webpage:https://www.nextflow.io/docs/latest/install.html
-4. Add the path where nextflow is to your bash (Follow instructions in Step 2).
+2. Update conda to activate FASTQC environment.
+3. Make sure you have also loaded Java version higher or similar to mentioned in the nextflow instructions manual
+4. Make sure you have installed nextflow. You can follow instructions on the nextflow webpage:https://www.nextflow.io/docs/latest/install.html
+5. Add the path where nextflow is to your bash (Follow instructions in Step 2).
     For bash :
     export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
-5. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
+6. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 
 ## MODULES NEEDED
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
