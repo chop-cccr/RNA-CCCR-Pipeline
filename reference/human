@@ -1,19 +1,27 @@
 
-Please refer to HPC reference directory. Under Human:
-chrLength.txt
-chrNameLength.txt
-chrName.txt
-chrStart.txt
-exonGeTrInfo.tab
-exonInfo.tab
-geneInfo.tab
-Genome
-genomeParameters.txt
-Log.out
-SA
-SAindex
-sjdbInfo.txt
-sjdbList.fromGTF.out.tab
-sjdbList.out.tab
-transcriptInfo.tab
+Please refer to HPC reference directory. 
+Under Human reference directory, you should find these STAR index files:
+
+├── hg38_gencode_v39_may2024/
+│   ├── chrLength.txt
+|   ├── chrNameLength.txt
+|   ├── chrName.txt
+|   ├── chrStart.txt
+|   ├── exonGeTrInfo.tab
+|   ├── exonInfo.tab
+|   ├── geneInfo.tab
+|   ├── Genome
+|   ├── genomeParameters.txt
+|   ├── Log.out
+|   ├── SA
+|   ├── SAindex
+|   ├── sjdbInfo.txt
+|   ├── sjdbList.fromGTF.out.tab
+|   ├── sjdbList.out.tab
+|   ├── transcriptInfo.tab
+
+
+
+
+
 
