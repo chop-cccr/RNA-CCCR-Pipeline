@@ -1,5 +1,5 @@
 Mouse STAR index file was created on mm10.fa reference. User should have the following files under their reference directory.
-These are reference files to run STAR:
+These are reference files user needs to run STAR:
 
 |   ├── chrLength.txt
 |   ├── chrNameLength.txt
