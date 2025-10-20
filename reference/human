@@ -1,1 +1,19 @@
 
+Please refer to HPC reference directory. Under Human:
+chrLength.txt
+chrNameLength.txt
+chrName.txt
+chrStart.txt
+exonGeTrInfo.tab
+exonInfo.tab
+geneInfo.tab
+Genome
+genomeParameters.txt
+Log.out
+SA
+SAindex
+sjdbInfo.txt
+sjdbList.fromGTF.out.tab
+sjdbList.out.tab
+transcriptInfo.tab
+
