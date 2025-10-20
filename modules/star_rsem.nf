@@ -1,10 +1,9 @@
 // STAR emits both genomic (QC) and transcriptome BAMs
-
 process STAR_ALIGN {
   tag { "STAR ${sid}" }
   publishDir "${params.outdir ?: 'results'}/star/${sid}",
              mode: 'copy',
-             pattern: "*.{bam,Log.final.out,SJ.out.tab}"
+             pattern: "*.{bam,Log.final.out,SJ.out.tab,ReadsPerGene.out.tab}"
 
   input:
   tuple val(sid), path(r1), path(r2), val(rg)
@@ -15,6 +14,7 @@ process STAR_ALIGN {
   tuple val(sid), path("${sid}.Aligned.toTranscriptome.out.bam"), emit: tx_bam
   path "${sid}.Log.final.out",                                    emit: logs
   path "${sid}.SJ.out.tab",                                       emit: splice
+  path "${sid}.ReadsPerGene.out.tab",                             emit: genecounts
 
   cpus   (params.star_cpus ?: 8)
   memory (params.star_mem  ?: '32 GB')
@@ -24,27 +24,17 @@ process STAR_ALIGN {
   def readIn       = r2 ? "${r1} ${r2}" : "${r1}"
 
   """
-  set -euo pipefail
+set -euo pipefail
   STAR \\
     --runThreadN ${task.cpus} \\
     --genomeDir ${star_index} \\
     --readFilesIn ${readIn} \\
-    ${readFilesCmd} \\
-    --outFileNamePrefix ${sid}. \\
-    --outSAMtype BAM SortedByCoordinate \\
-    --quantMode TranscriptomeSAM GeneCounts
-  """
-}
-
-
-
-
-// RSEM from STAR’s transcriptome BAM
+    ${readFilesCmd} \\// RSEM from STAR’s transcriptome BAM
 
 
 process RSEM_CALCULATE {
   tag { "RSEM ${sid}" }
-  publishDir "${params.outdir ?: 'results'}/rsem",
+  publishDir "${params.outdir ?: 'results'}/rsem/${sid}",
              mode: 'copy',
              pattern: "${sid}.*.results"
 
@@ -90,4 +80,3 @@ process RSEM_CALCULATE {
     ${sid}
   """
 }
-
