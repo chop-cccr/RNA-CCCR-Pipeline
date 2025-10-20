@@ -1,3 +1,6 @@
+
+
+
 process PREP_STAR_INDEX {
 output:
 path 'star_index', emit: star_index
@@ -30,10 +33,10 @@ STAR \
 }
 
 
+
 process PREP_RSEM_INDEX {
 tag "RSEM reference (${reference.species})"
 publishDir params.outdir, mode: 'copy', pattern: 'rsem_ref/**'
-
 
 input:
 val reference
@@ -42,14 +45,8 @@ val reference
 output:
 path 'rsem_ref', emit: rsem_ref
 
-
 when:
 params.build_index
-
-
-conda (params.use_conda ? 'envs/rna.yml' : null)
-container params.container
-
 
 script:
 def fasta = reference.fasta
@@ -63,4 +60,7 @@ rsem-prepare-reference \
 ${fasta} \
 ${prefix}
 """
-}
+}conda (params.use_conda ? 'envs/rna.yml' : null)
+container params.container
+
+
