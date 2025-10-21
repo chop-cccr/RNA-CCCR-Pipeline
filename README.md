@@ -30,6 +30,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
     export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
 6. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 7. FASTQC can be installed using conda. This is the easiest way to make sure FASTQC works.
+8. Reference in HPC
 
 ## MODULES NEEDED
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
