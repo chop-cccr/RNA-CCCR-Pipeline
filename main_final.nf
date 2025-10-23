@@ -135,9 +135,7 @@ workflow {
   //report_pdf_ch.view { "RSEM report -> ${it}" }
 
 }
-                                                                                                                              137,1         Bot
-
-
+                                                                                                                          
 
 
 
