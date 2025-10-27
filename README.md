@@ -31,9 +31,9 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 6. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 7. FASTQC can be installed using conda. This is the easiest way to make sure FASTQC works.
 8. **Reference download instructions:**
-- Run the `fetch_reference.sh` script to copy reference files.
-- You can specify a destination path, or it will copy to the current directory.
-- **Command:** `./fetch_reference.sh`
+	- Run the `fetch_reference.sh` script to copy reference files.
+	- You can specify a destination path, or it will copy to the current directory.
+	- **Command:** `./fetch_reference.sh`
 
 
 ## MODULES NEEDED
