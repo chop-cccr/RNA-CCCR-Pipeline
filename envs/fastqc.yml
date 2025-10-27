@@ -1,4 +1,4 @@
-name: fastqc
+name: FastQC_nf
 channels:
   - bcbio
   - defaults
