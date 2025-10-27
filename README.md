@@ -36,7 +36,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 	- **Command:** `./fetch_reference.sh`
 
 
-## MODULES NEEDED
+## SETUP before running nextflow pipeline
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
 ```bash
 #For nextflow
