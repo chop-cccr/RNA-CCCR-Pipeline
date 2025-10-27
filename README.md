@@ -50,8 +50,7 @@ module load samtools
 module load singularity
 
 # To install and run FASTQC
-
-` _ Install FastQC using envs/fastqc.yml using these commands _`
+* Install FastQC using envs/fastqc.yml using these commands *
 
 conda  env create -f fastqc.yml
 conda activate FastQC_nf
