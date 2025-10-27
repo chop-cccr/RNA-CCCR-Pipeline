@@ -3,7 +3,7 @@
 # MODE=copy|hardlink (default: copy); DRY=true for preview.
 set -euo pipefail
 
-SRC="/mnt/isilon/cccr_bfx/CCCR_Pipelines/RNA-CCCR-Pipeline/reference/"        # <- hard-coded source
+SRC="/mnt/isilon/cccr_bfx/CCCR_Pipelines/RNA-Seq_Pipeline_HPC/reference/"        # <- hard-coded source
 DST="${1:-reference}"              # default destination dir in the current folder
 MODE="${MODE:-copy}"               # copy | hardlink
 DRY="${DRY:-false}"                # true | false
