@@ -30,9 +30,10 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
     export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
 6. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 7. FASTQC can be installed using conda. This is the easiest way to make sure FASTQC works.
-8. Reference can be downloaded using fetch_reference.sh script. To run the script, you can either specify
-   the desination path or it will download in the same directory where the script is run.To run:
-                        ./fetch_reference.sh <DESTINATION PATH>
+8. **Reference download instructions:**
+- Run the `fetch_reference.sh` script to copy reference files.
+- You can specify a destination path, or it will copy to the current directory.
+- **Command:** `./fetch_reference.sh`
 
 
 ## MODULES NEEDED
