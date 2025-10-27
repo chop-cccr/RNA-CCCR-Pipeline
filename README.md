@@ -30,7 +30,10 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
     export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
 6. User can input unzipped FASTQ file or gzipped files. The pipeline will detect it and make commands accordingly.
 7. FASTQC can be installed using conda. This is the easiest way to make sure FASTQC works.
-8. Reference in HPC
+8. Reference can be downloaded using fetch_reference.sh script. To run the script, you can either specify
+   the desination path or it will download in the same directory where the script is run.To run:
+                        ./fetch_reference.sh <DESTINATION PATH>
+
 
 ## MODULES NEEDED
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
@@ -149,15 +152,9 @@ Detects .gz reads and uses zcat automatically.
 
 Run with -profile slurm,singularity on HPC or -profile docker locally.
 
-Nice‑to‑have future add‑ons (optional)
 
-Add FastQC/MultiQC module for quick QC.
 
-Add UMI handling (e.g., umi_tools) if needed.
 
-Add strandedness auto‑detection (e.g., RSeQC infer_experiment.py).
-
-If you share your GitHub link or upload your current main.nf/configs, I can transplant this structure and keep your commit history while minimizing breaking changes.
 
 
 ## Reference:
