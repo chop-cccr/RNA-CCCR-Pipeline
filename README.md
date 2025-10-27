@@ -74,13 +74,13 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same 
 ```bash
 ## For HPC (Load singularity)
 
-    nextflow run main_final.nf \
-    -c  nextflow.ALIGN.config \
-    --samplesheet ./assets/samplesheet.example.csv \
-    --read_group TEST  \
-    --outdir ./HELLO_HUMAN  \
-    --genomeDir ./reference/Mouse/Reference/mm10_gencode/mm10STAR/  \
-    --rsem_ref ./reference/Mouse/rsem_index/rsem_mm10  \
+    nextflow run main_final.nf 
+    -c  nextflow.ALIGN.config 
+    --samplesheet ./assets/samplesheet.example.csv 
+    --read_group TEST  
+    --outdir ./HELLO_mouse
+    --genomeDir ./reference/Mouse/Reference/mm10_gencode/mm10STAR/  
+    --rsem_ref ./reference/Mouse/rsem_index/rsem_mm10  
     --threads 10 -profile singularity -resume
 
 
