@@ -49,8 +49,10 @@ module load STAR
 module load samtools
 module load singularity
 
-# To run FASTQC in case FASTQC was installed via conda
-conda activate fastqc 
+# To run FASTQC
+Install FastQC using envs/fastqc.yml using these commands
+
+conda activate FastQC_nf
 
 FASTQC can be installed via conda:
 conda install bioconda::fastqc
