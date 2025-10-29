@@ -1,4 +1,6 @@
 #!/bin/sh
+#If reference folder was downloaded in the same directory 
+#as nextflow. If not, change the --genomeDir and --rsem_ref
     nextflow run main_final.nf \
     -c  ./nextflow.ALIGN.config \
     --samplesheet ./assets/samplesheet.example.csv \
