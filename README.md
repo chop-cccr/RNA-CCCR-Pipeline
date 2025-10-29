@@ -89,8 +89,8 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same 
 
 (Under construction)
 With Docker
-nextflow run main.nf -profile docker \
-  --samplesheet my_samples.csv \
+nextflow run main.nf -profile docker 
+  --samplesheet my_samples.csv 
   --species mouse
 
 
@@ -99,9 +99,11 @@ Inputs
 
 sample_id (unique)
 fastq_1 (path to R1)
-fastq_2 (optional path to R2, leave blank for SE)
+fastq_2 (path to R2)
 read_group (optional; default added if missing)
 
+
+At this point this pipeline only runs PE (Paired end)
 --species: human or mouse. For other species, use custom references.
 
 Reference options
