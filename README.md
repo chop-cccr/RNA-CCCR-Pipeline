@@ -39,18 +39,8 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 ## SETUP before running nextflow pipeline
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
 ```bash
-#For nextflow
-export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
-module load Java-17.0.6
-
-#To run STAR and RSEM 
-module load RSEM
-module load STAR     
-module load samtools
-module load singularity
 
 # To install and run FASTQC
-
 *Install FastQC using envs/fastqc.yml using these commands*
 
 conda  env create -f fastqc.yml
@@ -59,6 +49,24 @@ conda activate FastQC_nf
 #FASTQC can be installed via conda:
 conda install bioconda::fastqc
 
+#Load Java for singularity
+module load Java-17.0.6
+
+#Export nextflow PATH
+export PATH= "NEXTFLOW_INSTALLATION_PATH":$PATH
+
+#To run STAR and RSEM
+module load RSEM
+module load STAR
+module load samtools
+module load singularity
+
+** Also  make sure you load Java after activating FastQC environment
+
+#Load all modules using script on HPC
+source load_stuff.sh
+
+will load all above. Please run this after you load FastQC
 ```
 
 Download reference files
@@ -100,6 +108,8 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same 
 
 ** In case of --genomeDir :  add the path to the correct species STAR reference 
               --rsem_ref  :  add the path to the correct species RSEM reference 
+
+** Also make sure your config file paths in nextflow.config points to the directory conf (in the repository)
 
 (Under construction)
 With Docker
