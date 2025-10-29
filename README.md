@@ -61,7 +61,7 @@ conda install bioconda::fastqc
 
 ```
 
-##Download reference files
+Download reference files
 
 ```bash
 To download reference files for mouse and humans, use script fetch_reference.sh
