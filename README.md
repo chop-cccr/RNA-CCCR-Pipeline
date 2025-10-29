@@ -60,6 +60,18 @@ conda activate FastQC_nf
 conda install bioconda::fastqc
 
 ```
+##Download reference files
+```bash
+To download reference files for mouse and humans, use script fetch_reference.sh
+./fetch_reference.sh 
+
+This will download the reference folder to the currect directory
+
+./fetch_reference <DESTINATION_PATH>
+
+This will download the reference folder to the user defined path
+
+```
 
 ## Input files
 In the assets folder, you will find an example samplesheet that the pipeline can accept.
