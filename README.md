@@ -69,7 +69,7 @@ source load_stuff.sh
 will load all above. Please run this after you load FastQC
 
 To run DOCKER: 
-nextflow run main.nf -profile slurm,singularity \
+nextflow run main_final.nf -profile slurm,singularity \
   --container "docker://ghcr.io/chop-cccr/RNA-CCCR-Pipeline:v0.1.0"
 
 ```
