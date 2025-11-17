@@ -16,7 +16,6 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*
 
 # Bio tools (pin versions to avoid solver drift)
-# If solver stalls, the pins below help a lot.
 RUN set -eux; \
     micromamba install -y -n base -c conda-forge -c bioconda \
       openjdk=17 \
@@ -32,27 +31,35 @@ RUN set -eux; \
     curl -fsSL https://get.nextflow.io -o /usr/local/bin/nextflow; \
     chmod +x /usr/local/bin/nextflow
 
-# Ensure binaries on PATH
-ENV PATH=/opt/conda/bin:$PATH
-
 # ---------- Non-root runtime user ----------
 ARG UID=1000
 ARG GID=1000
 ARG USERNAME=nfuser
 
-# Create group only if not exists; same for user (avoids errors on some bases)
 RUN set -eux; \
+    # Create group and user if they don't already exist
     getent group ${GID} || groupadd -g ${GID} ${USERNAME}; \
     id -u ${UID} >/dev/null 2>&1 || useradd -m -u ${UID} -g ${GID} -s /bin/bash ${USERNAME}; \
-    mkdir -p /workspace; \
+    # Workspace + tools dir in user's home
+    mkdir -p /workspace /home/${USERNAME}/tools; \
+    # Symlink main tools into /home/${USERNAME}/tools
+    ln -s /opt/conda/bin/STAR          /home/${USERNAME}/tools/STAR; \
+    ln -s /opt/conda/bin/RSEM*         /home/${USERNAME}/tools/ || true; \
+    ln -s /opt/conda/bin/fastqc        /home/${USERNAME}/tools/fastqc; \
+    ln -s /opt/conda/bin/samtools      /home/${USERNAME}/tools/samtools; \
+    ln -s /usr/local/bin/nextflow      /home/${USERNAME}/tools/nextflow; \
+    # Permissions
     chown -R ${USERNAME}:${USERNAME} /workspace /home/${USERNAME}; \
     chmod 1777 /tmp
 
-# Writable cache/temp to avoid permission problems
+# ---------- Runtime environment ----------
 ENV HOME=/home/${USERNAME} \
     XDG_CACHE_HOME=/tmp \
     TMPDIR=/tmp \
     UMASK=0002
+
+# Put user's tools first on PATH (they point to /opt/conda/bin + nextflow)
+ENV PATH=/home/${USERNAME}/tools:$PATH
 
 USER ${USERNAME}
 WORKDIR /workspace
