@@ -6,8 +6,13 @@ LABEL description="RNA-Seq pipeline tools: STAR, RSEM, FastQC, samtools, Java, N
 ENV DEBIAN_FRONTEND=noninteractive \
     MAMBA_NO_BANNER=1
 
+# 👇 IMPORTANT: become root before using apt
+USER root
+
 # Basic OS deps
 RUN set -eux; \
+    # (optional but robust: ensure the lists dir exists)
+    mkdir -p /var/lib/apt/lists/partial; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
       bash coreutils findutils gawk tar unzip bzip2 pigz procps \
@@ -29,8 +34,17 @@ RUN set -eux; \
     curl -fsSL https://get.nextflow.io -o /usr/local/bin/nextflow; \
     chmod +x /usr/local/bin/nextflow
 
-# Symlink key tools into /usr/local/bin (like the cellranger example)
+# Symlink key tools into /usr/local/bin
 RUN set -eux; \
-    ln -s /opt/conda/bin/STAR                     /usr/local/bin/STAR; \
-    ln -s /opt/conda/bin/RSE
+    ln -s /opt/conda/bin/STAR          /usr/local/bin/STAR; \
+    ln -s /opt/conda/bin/RSEM*         /usr/local/bin/ || true; \
+    ln -s /opt/conda/bin/fastqc        /usr/local/bin/fastqc; \
+    ln -s /opt/conda/bin/samtools      /usr/local/bin/samtools
+
+# (Optional) you *can* switch back to the non-root micromamba user here:
+# USER micromamba
+
+WORKDIR /workspace
+SHELL ["/bin/bash","-lc"]
+CMD ["bash"]
 
