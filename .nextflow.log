@@ -1,123 +1,118 @@
-Nov-17 08:23:38.960 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main_final.nf -profile slurm,singularity --container 'docker://ghcr.io/chop-cccr/rna-cccr-pipeline:v0.1.0' -c ./nextflow.ALIGN.config --samplesheet ./assets/samplesheet.example.csv --read_group TEST --outdir ../TEST_HPC_runs --genomeDir /mnt/isilon/cccr_bfx/CCCR_Pipelines/RNA-Seq_Pipeline_HPC/reference/Human/hg38_gencode_v39_may2024/ --rsem_ref /mnt/isilon/cccr_bfx/CCCR_Pipelines/R^C-Seq_Pipeline_HPC/reference/Mouse/rsem_index/rsem_mm10
-Nov-17 08:23:39.070 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
-Nov-17 08:23:39.091 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/mishrap/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
-Nov-17 08:23:39.136 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Nov-17 08:23:39.137 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Nov-17 08:23:39.140 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
-Nov-17 08:23:39.156 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Nov-17 08:23:39.178 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/nextflow.config
-Nov-17 08:23:39.182 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/./nextflow.ALIGN.config
-Nov-17 08:23:39.184 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/nextflow.config
-Nov-17 08:23:39.185 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/nextflow.ALIGN.config
-Nov-17 08:23:39.212 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/mishrap/.nextflow/secrets/store.json
-Nov-17 08:23:39.216 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@577f9109] - activable => nextflow.secret.LocalSecretsProvider@577f9109
-Nov-17 08:23:39.229 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `slurm,singularity`
-Nov-17 08:23:39.920 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `slurm,singularity`
-Nov-17 08:23:39.953 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [standard, slurm, groovy, conda, singularity, docker]
-Nov-17 08:23:39.985 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
-Nov-17 08:23:40.003 [main] DEBUG nextflow.cli.CmdRun - Launching `main_final.nf` [compassionate_swirles] DSL2 - revision: b270a97195
-Nov-17 08:23:40.004 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Nov-17 08:23:40.004 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Nov-17 08:23:40.064 [main] DEBUG nextflow.Session - Session UUID: cc4e0aab-e91a-4101-ae1e-951d035d82b3
-Nov-17 08:23:40.064 [main] DEBUG nextflow.Session - Run name: compassionate_swirles
-Nov-17 08:23:40.065 [main] DEBUG nextflow.Session - Executor pool size: 4
-Nov-17 08:23:40.072 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Nov-17 08:23:40.077 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Nov-17 08:23:40.099 [main] DEBUG nextflow.cli.CmdRun - 
+Nov-17 10:52:27.064 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main_final.nf -profile slurm -c ./nextflow.ALIGN.config --samplesheet ./assets/samplesheet.example.csv --read_group TEST --outdir ../TEST_HPC_runs --genomeDir /mnt/isilon/cccr_bfx/CCCR_Pipelines/RNA-Seq_Pipeline_HPC/reference/Human/hg38_gencode_v39_may2024/ --rsem_ref /mnt/isilon/cccr_bfx/CCCR_Pipelines/RNA-Seq_Pipeline_HPC/reference/Mouse/rsem_index/rsem_mm10
+Nov-17 10:52:27.196 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Nov-17 10:52:27.219 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/mishrap/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Nov-17 10:52:27.268 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-17 10:52:27.270 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-17 10:52:27.273 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Nov-17 10:52:27.288 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-17 10:52:27.331 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/nextflow.config
+Nov-17 10:52:27.335 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/./nextflow.ALIGN.config
+Nov-17 10:52:27.336 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/nextflow.config
+Nov-17 10:52:27.337 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/nextflow.ALIGN.config
+Nov-17 10:52:27.367 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/mishrap/.nextflow/secrets/store.json
+Nov-17 10:52:27.370 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@577f9109] - activable => nextflow.secret.LocalSecretsProvider@577f9109
+Nov-17 10:52:27.383 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `slurm`
+Nov-17 10:52:28.060 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `slurm`
+Nov-17 10:52:28.094 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [standard, slurm, groovy, conda, singularity, docker]
+Nov-17 10:52:28.137 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Nov-17 10:52:28.158 [main] DEBUG nextflow.cli.CmdRun - Launching `main_final.nf` [mad_wright] DSL2 - revision: b270a97195
+Nov-17 10:52:28.160 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-17 10:52:28.160 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Nov-17 10:52:28.219 [main] DEBUG nextflow.Session - Session UUID: 19da5dd9-e00f-498f-a29c-c74eeec86102
+Nov-17 10:52:28.219 [main] DEBUG nextflow.Session - Run name: mad_wright
+Nov-17 10:52:28.220 [main] DEBUG nextflow.Session - Executor pool size: 4
+Nov-17 10:52:28.227 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-17 10:52:28.232 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-17 10:52:28.262 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 25.04.6 build 5954
   Created: 01-07-2025 11:27 UTC (07:27 EDT)
   System: Linux 5.14.0-162.6.1.el9_1.x86_64
   Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 17.0.6+10
   Encoding: UTF-8 (UTF-8)
-  Process: 898720@reslnvhpc053.research.chop.edu [127.0.0.1]
-  CPUs: 4 - Mem: 5.8 GB (499.3 MB) - Swap: 8 GB (5.1 GB)
-Nov-17 08:23:40.142 [main] DEBUG nextflow.Session - Work-dir: /home/mishrap/nf_work [nfs]
-Nov-17 08:23:40.143 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/bin
-Nov-17 08:23:40.152 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Nov-17 08:23:40.161 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Nov-17 08:23:40.166 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
-Nov-17 08:23:40.192 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Nov-17 08:23:40.201 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
-Nov-17 08:23:40.311 [main] DEBUG nextflow.Session - Session start
-Nov-17 08:23:40.695 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Nov-17 08:23:40.709 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `strandedness` -- Initialise it to a default value eg. `params.strandedness = some_value`
-Nov-17 08:23:40.710 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `rscript` -- Initialise it to a default value eg. `params.rscript = some_value`
-Nov-17 08:23:41.132 [main] INFO  nextflow.Nextflow - Loading samplesheet: ./assets/samplesheet.example.csv
-Nov-17 08:23:41.285 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:fastqc` matches labels `fastqc` for process with name FASTQC
-Nov-17 08:23:41.296 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
-Nov-17 08:23:41.296 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
-Nov-17 08:23:41.305 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
-Nov-17 08:23:41.311 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
-Nov-17 08:23:41.313 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
-Nov-17 08:23:41.316 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
-Nov-17 08:23:41.337 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
-Nov-17 08:23:41.382 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `star_cpus` -- Initialise it to a default value eg. `params.star_cpus = some_value`
-Nov-17 08:23:41.384 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `star_mem` -- Initialise it to a default value eg. `params.star_mem = some_value`
-Nov-17 08:23:41.387 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:STAR_ALIGN` matches process STAR_ALIGN
-Nov-17 08:23:41.394 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
-Nov-17 08:23:41.394 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
-Nov-17 08:23:41.395 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'STAR_ALIGN': maxForks=0; fair=false; array=0
-Nov-17 08:23:41.407 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
-Nov-17 08:23:41.407 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
-Nov-17 08:23:41.408 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'samtools_index': maxForks=0; fair=false; array=0
-Nov-17 08:23:41.419 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `rsem_cpus` -- Initialise it to a default value eg. `params.rsem_cpus = some_value`
-Nov-17 08:23:41.420 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `rsem_mem` -- Initialise it to a default value eg. `params.rsem_mem = some_value`
-Nov-17 08:23:41.422 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:RSEM_CALCULATE` matches process RSEM_CALCULATE
-Nov-17 08:23:41.424 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
-Nov-17 08:23:41.424 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
-Nov-17 08:23:41.424 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'RSEM_CALCULATE': maxForks=0; fair=false; array=0
-Nov-17 08:23:41.428 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, PREP_STAR_INDEX, PREP_RSEM_INDEX, RSEM_CALCULATE, STAR_ALIGN, samtools_index
-Nov-17 08:23:41.430 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
-Nov-17 08:23:41.436 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
-Nov-17 08:23:41.436 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > STAR_ALIGN
-Nov-17 08:23:41.436 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samtools_index
-Nov-17 08:23:41.436 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RSEM_CALCULATE
-Nov-17 08:23:41.437 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Process: 940332@reslnvhpc053.research.chop.edu [127.0.0.1]
+  CPUs: 4 - Mem: 5.8 GB (581.3 MB) - Swap: 8 GB (4.5 GB)
+Nov-17 10:52:28.336 [main] DEBUG nextflow.Session - Work-dir: /home/mishrap/nf_work [nfs]
+Nov-17 10:52:28.339 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/bin
+Nov-17 10:52:28.348 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Nov-17 10:52:28.360 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-17 10:52:28.365 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Nov-17 10:52:28.395 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-17 10:52:28.411 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Nov-17 10:52:28.632 [main] DEBUG nextflow.Session - Session start
+Nov-17 10:52:29.039 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-17 10:52:29.049 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `strandedness` -- Initialise it to a default value eg. `params.strandedness = some_value`
+Nov-17 10:52:29.051 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `rscript` -- Initialise it to a default value eg. `params.rscript = some_value`
+Nov-17 10:52:29.470 [main] INFO  nextflow.Nextflow - Loading samplesheet: ./assets/samplesheet.example.csv
+Nov-17 10:52:29.623 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:fastqc` matches labels `fastqc` for process with name FASTQC
+Nov-17 10:52:29.635 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Nov-17 10:52:29.635 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Nov-17 10:52:29.645 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Nov-17 10:52:29.652 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Nov-17 10:52:29.654 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Nov-17 10:52:29.657 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Nov-17 10:52:29.680 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Nov-17 10:52:29.746 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `star_cpus` -- Initialise it to a default value eg. `params.star_cpus = some_value`
+Nov-17 10:52:29.748 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `star_mem` -- Initialise it to a default value eg. `params.star_mem = some_value`
+Nov-17 10:52:29.751 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:STAR_ALIGN` matches process STAR_ALIGN
+Nov-17 10:52:29.758 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Nov-17 10:52:29.759 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Nov-17 10:52:29.760 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'STAR_ALIGN': maxForks=0; fair=false; array=0
+Nov-17 10:52:29.772 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Nov-17 10:52:29.772 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Nov-17 10:52:29.773 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'samtools_index': maxForks=0; fair=false; array=0
+Nov-17 10:52:29.782 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `rsem_cpus` -- Initialise it to a default value eg. `params.rsem_cpus = some_value`
+Nov-17 10:52:29.782 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `rsem_mem` -- Initialise it to a default value eg. `params.rsem_mem = some_value`
+Nov-17 10:52:29.784 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:RSEM_CALCULATE` matches process RSEM_CALCULATE
+Nov-17 10:52:29.786 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Nov-17 10:52:29.786 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Nov-17 10:52:29.786 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'RSEM_CALCULATE': maxForks=0; fair=false; array=0
+Nov-17 10:52:29.790 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, PREP_STAR_INDEX, PREP_RSEM_INDEX, RSEM_CALCULATE, STAR_ALIGN, samtools_index
+Nov-17 10:52:29.793 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
+Nov-17 10:52:29.799 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Nov-17 10:52:29.800 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > STAR_ALIGN
+Nov-17 10:52:29.800 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samtools_index
+Nov-17 10:52:29.800 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RSEM_CALCULATE
+Nov-17 10:52:29.800 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
   Script_ae99f8dab70ea255: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/modules/indexing.nf
-  Script_bf85b6c901de95f1: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/modules/util.nf
   Script_37698d91389cffd3: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/main_final.nf
+  Script_bf85b6c901de95f1: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/modules/util.nf
   Script_f763650005584e1f: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/modules/QC.nf
   Script_d0cde0b5dd29ea6e: /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline/modules/star_rsem.nf
-Nov-17 08:23:41.437 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Nov-17 08:23:41.437 [main] DEBUG nextflow.Session - Session await
-Nov-17 08:23:41.690 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process STAR_ALIGN (STAR Astrocytes) > jobId: 59957694; workDir: /home/mishrap/nf_work/47/42680b14f82afab149c9e543e696b3
-Nov-17 08:23:41.691 [Task submitter] INFO  nextflow.Session - [47/42680b] Submitted process > STAR_ALIGN (STAR Astrocytes)
-Nov-17 08:23:41.742 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process STAR_ALIGN (STAR example_data) > jobId: 59957695; workDir: /home/mishrap/nf_work/6c/ad81b9be9fac186d42afa08d85453c
-Nov-17 08:23:41.742 [Task submitter] INFO  nextflow.Session - [6c/ad81b9] Submitted process > STAR_ALIGN (STAR example_data)
-Nov-17 08:23:41.781 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process FASTQC (example_data) > jobId: 59957696; workDir: /home/mishrap/nf_work/ca/778cba750969b2720f1926dd32df04
-Nov-17 08:23:41.782 [Task submitter] INFO  nextflow.Session - [ca/778cba] Submitted process > FASTQC (example_data)
-Nov-17 08:23:41.822 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process FASTQC (Astrocytes) > jobId: 59957697; workDir: /home/mishrap/nf_work/a9/c3ea937e61de0955fe1d17657f2bb4
-Nov-17 08:23:41.822 [Task submitter] INFO  nextflow.Session - [a9/c3ea93] Submitted process > FASTQC (Astrocytes)
-Nov-17 08:25:56.344 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59957694; id: 1; name: STAR_ALIGN (STAR Astrocytes); status: COMPLETED; exit: 127; error: -; workDir: /home/mishrap/nf_work/47/42680b14f82afab149c9e543e696b3 started: 1763385891419; exited: 2025-11-17T13:24:51.811822Z; ]
-Nov-17 08:25:56.346 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Nov-17 08:25:56.356 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59957695; id: 4; name: STAR_ALIGN (STAR example_data); status: COMPLETED; exit: 127; error: -; workDir: /home/mishrap/nf_work/6c/ad81b9be9fac186d42afa08d85453c started: 1763385891428; exited: 2025-11-17T13:24:51.976337Z; ]
-Nov-17 08:25:56.362 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59957696; id: 3; name: FASTQC (example_data); status: COMPLETED; exit: 127; error: -; workDir: /home/mishrap/nf_work/ca/778cba750969b2720f1926dd32df04 started: 1763385891430; exited: 2025-11-17T13:24:51.749392Z; ]
-Nov-17 08:25:56.363 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=STAR_ALIGN (STAR example_data); work-dir=/home/mishrap/nf_work/6c/ad81b9be9fac186d42afa08d85453c
-  error [nextflow.exception.ProcessFailedException]: Process `STAR_ALIGN (STAR example_data)` terminated with an error exit status (127)
-Nov-17 08:25:56.364 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=FASTQC (example_data); work-dir=/home/mishrap/nf_work/ca/778cba750969b2720f1926dd32df04
-  error [nextflow.exception.ProcessFailedException]: Process `FASTQC (example_data)` terminated with an error exit status (127)
-Nov-17 08:25:56.366 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59957697; id: 2; name: FASTQC (Astrocytes); status: COMPLETED; exit: 127; error: -; workDir: /home/mishrap/nf_work/a9/c3ea937e61de0955fe1d17657f2bb4 started: 1763385891434; exited: 2025-11-17T13:24:51.982241Z; ]
-Nov-17 08:25:56.372 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=STAR_ALIGN (STAR Astrocytes); work-dir=/home/mishrap/nf_work/47/42680b14f82afab149c9e543e696b3
+Nov-17 10:52:29.800 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-17 10:52:29.800 [main] DEBUG nextflow.Session - Session await
+Nov-17 10:52:30.147 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process FASTQC (example_data) > jobId: 59961882; workDir: /home/mishrap/nf_work/2f/c01485753989f500d4a80d413b7dfd
+Nov-17 10:52:30.148 [Task submitter] INFO  nextflow.Session - [2f/c01485] Submitted process > FASTQC (example_data)
+Nov-17 10:52:30.256 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process FASTQC (Astrocytes) > jobId: 59961883; workDir: /home/mishrap/nf_work/f7/7b2c0c9c8be1754f37e7a47bcecc28
+Nov-17 10:52:30.256 [Task submitter] INFO  nextflow.Session - [f7/7b2c0c] Submitted process > FASTQC (Astrocytes)
+Nov-17 10:52:30.356 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process STAR_ALIGN (STAR Astrocytes) > jobId: 59961884; workDir: /home/mishrap/nf_work/1d/d60dfea027739aac83bfac9e0e24c1
+Nov-17 10:52:30.357 [Task submitter] INFO  nextflow.Session - [1d/d60dfe] Submitted process > STAR_ALIGN (STAR Astrocytes)
+Nov-17 10:52:30.444 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process STAR_ALIGN (STAR example_data) > jobId: 59961885; workDir: /home/mishrap/nf_work/c9/5a3a112349f87acd6cd2e8b4b84693
+Nov-17 10:52:30.445 [Task submitter] INFO  nextflow.Session - [c9/5a3a11] Submitted process > STAR_ALIGN (STAR example_data)
+Nov-17 10:53:39.733 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59961883; id: 2; name: FASTQC (Astrocytes); status: COMPLETED; exit: 0; error: -; workDir: /home/mishrap/nf_work/f7/7b2c0c9c8be1754f37e7a47bcecc28 started: 1763394819725; exited: 2025-11-17T15:53:17.907514Z; ]
+Nov-17 10:53:39.734 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-17 10:53:39.743 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59961884; id: 1; name: STAR_ALIGN (STAR Astrocytes); status: COMPLETED; exit: 127; error: -; workDir: /home/mishrap/nf_work/1d/d60dfea027739aac83bfac9e0e24c1 started: 1763394819737; exited: 2025-11-17T15:53:13.742861Z; ]
+Nov-17 10:53:39.748 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 59961885; id: 3; name: STAR_ALIGN (STAR example_data); status: COMPLETED; exit: 127; error: -; workDir: /home/mishrap/nf_work/c9/5a3a112349f87acd6cd2e8b4b84693 started: 1763394819743; exited: 2025-11-17T15:53:13.983085Z; ]
+Nov-17 10:53:39.753 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=STAR_ALIGN (STAR Astrocytes); work-dir=/home/mishrap/nf_work/1d/d60dfea027739aac83bfac9e0e24c1
   error [nextflow.exception.ProcessFailedException]: Process `STAR_ALIGN (STAR Astrocytes)` terminated with an error exit status (127)
-Nov-17 08:25:56.427 [TaskFinalizer-3] ERROR nextflow.processor.TaskProcessor - Error executing process > 'FASTQC (example_data)'
+Nov-17 10:53:39.786 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-17 10:53:39.801 [TaskFinalizer-2] ERROR nextflow.processor.TaskProcessor - Error executing process > 'STAR_ALIGN (STAR Astrocytes)'
 
 Caused by:
-  Process `FASTQC (example_data)` terminated with an error exit status (127)
+  Process `STAR_ALIGN (STAR Astrocytes)` terminated with an error exit status (127)
 
 
 Command executed:
 
-  fastqc  --outdir . 24280FL-03-01-03_S3_L005_R1_001.fastq.gz
-  
-  # FastQC names outputs based on the FASTQ basename; standardize to sample-based
-  html_file=$(ls *_fastqc.html | head -n 1)
-  zip_file=$(ls *_fastqc.zip  | head -n 1)
-  
-  mv "$html_file" "example_data_fastqc.html"
-  mv "$zip_file"  "example_data_fastqc.zip"
+  set -euo pipefail
+  STAR \
+    --runThreadN 12 \
+    --genomeDir /mnt/isilon/cccr_bfx/CCCR_Pipelines/RNA-Seq_Pipeline_HPC/reference/Human/hg38_gencode_v39_may2024 \
+    --readFilesIn SRR2557083_1.fastq.gz SRR2557083_2.fastq.gz \
+    --readFilesCommand zcat \
+    --outFileNamePrefix Astrocytes. \
+    --outSAMtype BAM SortedByCoordinate \
+    --quantMode TranscriptomeSAM GeneCounts
 
 Command exit status:
   127
@@ -126,19 +121,20 @@ Command output:
   (empty)
 
 Command error:
-  .command.sh: line 2: fastqc: command not found
+  .command.sh: line 4: STAR: command not found
 
 Work dir:
-  /home/mishrap/nf_work/ca/778cba750969b2720f1926dd32df04
+  /home/mishrap/nf_work/1d/d60dfea027739aac83bfac9e0e24c1
 
 Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
-Nov-17 08:25:56.429 [TaskFinalizer-4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=FASTQC (Astrocytes); work-dir=/home/mishrap/nf_work/a9/c3ea937e61de0955fe1d17657f2bb4
-  error [nextflow.exception.ProcessFailedException]: Process `FASTQC (Astrocytes)` terminated with an error exit status (127)
-Nov-17 08:25:56.431 [main] DEBUG nextflow.Session - Session await > all processes finished
-Nov-17 08:25:56.431 [TaskFinalizer-3] DEBUG nextflow.Session - Session aborted -- Cause: Process `FASTQC (example_data)` terminated with an error exit status (127)
-Nov-17 08:25:56.463 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
-Nov-17 08:25:56.463 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Nov-17 08:25:56.471 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=4; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=34m 38s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=4; peakCpus=32; peakMemory=112 GB; ]
-Nov-17 08:25:56.687 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Nov-17 08:25:56.759 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Nov-17 10:53:39.823 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=STAR_ALIGN (STAR example_data); work-dir=/home/mishrap/nf_work/c9/5a3a112349f87acd6cd2e8b4b84693
+  error [nextflow.exception.ProcessFailedException]: Process `STAR_ALIGN (STAR example_data)` terminated with an error exit status (127)
+Nov-17 10:53:39.831 [TaskFinalizer-2] DEBUG nextflow.Session - Session aborted -- Cause: Process `STAR_ALIGN (STAR Astrocytes)` terminated with an error exit status (127)
+Nov-17 10:53:39.872 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+Nov-17 10:53:39.872 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-17 10:53:39.872 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-17 10:53:39.882 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (1)
+Nov-17 10:53:39.923 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=2; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=1; succeedDuration=24ms; failedDuration=120ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=4; peakCpus=32; peakMemory=112 GB; ]
+Nov-17 10:53:40.053 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-17 10:53:40.104 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,3 +1,4 @@
-singularity exec docker://ghcr.io/chop-cccr/rna-cccr-pipeline:v0.3.0 \
-  bash -lc 'which STAR; STAR --version; which fastqc; which samtools'
-
+#singularity exec -e docker://ghcr.io/pamelanmrc/rna-seq-nextflow-docker:latest \
+#  bash -lc 'env | head; which STAR; STAR --version; which fastqc; which samtools'
+singularity build rna-cccr-pipeline_v0.4.0.sif \
+docker://ghcr.io/pamelanmrc/rna-seq-nextflow-docker:latest 

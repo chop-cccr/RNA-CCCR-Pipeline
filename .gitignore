@@ -1,3 +1,5 @@
 #reference file
 #ENVS local
 .env.local
+containers/*.sif
+*.sif

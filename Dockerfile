@@ -1,12 +1,11 @@
 FROM mambaorg/micromamba:1.5.8
 
-LABEL maintainer="Pam / CHOP CCCR"
+LABEL maintainer="Pamela Mishra / CHOP CCCR"
 LABEL description="RNA-Seq pipeline tools: STAR, RSEM, FastQC, samtools, Java, Nextflow"
 
 ENV DEBIAN_FRONTEND=noninteractive \
     MAMBA_NO_BANNER=1
 
-# 👇 IMPORTANT: become root before using apt
 USER root
 
 # Basic OS deps
@@ -47,4 +46,5 @@ RUN set -eux; \
 WORKDIR /workspace
 SHELL ["/bin/bash","-lc"]
 CMD ["bash"]
+ENV PATH=/opt/conda/bin:$PATH
 
