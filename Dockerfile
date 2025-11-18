@@ -16,11 +16,15 @@ USER $MAMBA_USER
 
 # Create env with required tools
 RUN micromamba create -y -n rnaseq-env -c conda-forge -c bioconda \
-      fastqc \
-      star \
-      rsem \
-      samtools \
+    fastqc \
+    star \
+    rsem \
+    samtools \
     && micromamba clean -a -y
+
+
+
+
 
 ENV MAMBA_DEFAULT_ENV=rnaseq-env
 ENV PATH=/opt/conda/envs/rnaseq-env/bin:$PATH
