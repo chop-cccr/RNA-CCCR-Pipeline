@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 #Add java 
-RUN apt-get update && apt-get install -y openjdk-17-jre-headless ... 
- 
+#REMOVED 
  
 RUN curl -s https://get.nextflow.io | bash \ 
     && mv nextflow /usr/local/bin/ \ 
