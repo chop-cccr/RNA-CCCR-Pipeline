@@ -12,6 +12,15 @@ RUN apt-get update && apt-get install -y \
       perl \
     && rm -rf /var/lib/apt/lists/*
 
+#Add java 
+RUN apt-get update && apt-get install -y openjdk-17-jre-headless ... 
+ 
+ 
+RUN curl -s https://get.nextflow.io | bash \ 
+    && mv nextflow /usr/local/bin/ \ 
+    && chmod +x /usr/local/bin/nextflow 
+
+
 USER $MAMBA_USER
 
 # Create env with required tools
