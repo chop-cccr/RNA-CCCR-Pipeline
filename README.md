@@ -73,9 +73,10 @@ Contents
 </> Markdown 
 -[Run Docker] (#run_docker)
 
-```bash
+
 
 ## Run Docker
+```bash
 To run DOCKER follow these instructions: 
 
 1. Login to any of the BiG servers(prefer hedy)
