@@ -68,10 +68,25 @@ source load_stuff.sh
 
 will load all above. Please run this after you load FastQC
 
-To run DOCKER: 
-nextflow run main_final.nf -profile slurm,singularity \
-  --container "docker://ghcr.io/chop-cccr/RNA-CCCR-Pipeline:v0.1.0"
+```
+```bash
+To run DOCKER follow these instructions: 
 
+
+unset LD_PRELOAD
+singularity exec \
+--bind <PATH_TO_REFRENCE AND DATA>,  \
+--pwd /mnt/isilon/cccr_bfx/CCCR_Pipelines/github/current/RNA-CCCR-Pipeline \
+rna-cccr-pipeline_latest.sif \
+nextflow run main_final.nf --max_memory 64G -profile standard \
+-c ./nextflow.ALIGN.config \
+--samplesheet ./assets/samplesheet.example.csv --read_group TEST --outdir ./docker_runs_test \
+--genomeDir <STAR_INDEX> \
+--rsem_ref <RSEM_REF>  \
+-resume
+
+
+```
 ```
 
 Download reference files
