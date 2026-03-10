@@ -70,7 +70,6 @@ will load all above. Please run this after you load FastQC
 ```
 
 Contents
-</> Markdown 
 -[Run Docker](#run_docker)
 
 
