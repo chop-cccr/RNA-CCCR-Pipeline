@@ -68,7 +68,12 @@ source load_stuff.sh
 will load all above. Please run this after you load FastQC
 
 ```
+
+Contents
+Run Docker
+
 ```bash
+[Run Docker](#run_docker)
 To run DOCKER follow these instructions: 
 
 1. Login to any of the BiG servers(prefer hedy)
