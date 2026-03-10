@@ -15,9 +15,8 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 
 ## Features
 - ✅ Human or mouse presets; or fully custom references
-- ✅ Optional **on‑the‑fly index** building from FASTA+GTF
 - ✅ Slurm‑ready config; resuming supported (`-resume`)
-- ✅ Paired‑end or single‑end reads
+- ✅ Paired‑end
 - ✅ Containers (Docker/Singularity) or Conda env
 
 ## Steps to make sure it runs smoothly
@@ -101,11 +100,10 @@ nextflow run main_final.nf --max_memory 64G -profile standard \
 
 
 ```
-```
+```bash
 
 Download reference files
 
-```bash
 To download reference files for mouse and humans, use script fetch_reference.sh
 ./fetch_reference.sh 
 
