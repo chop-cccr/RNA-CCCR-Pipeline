@@ -74,7 +74,7 @@ Contents
 -[Run Docker] (#run_docker)
 
 ```bash
-</> Markdown
+
 ## Run Docker
 To run DOCKER follow these instructions: 
 
