@@ -70,10 +70,12 @@ will load all above. Please run this after you load FastQC
 ```
 
 Contents
-Run Docker
+</> Markdown 
+-[Run Docker] (#run_docker)
 
 ```bash
-[Run Docker](#run_docker)
+</> Markdown
+## Run Docker
 To run DOCKER follow these instructions: 
 
 1. Login to any of the BiG servers(prefer hedy)
