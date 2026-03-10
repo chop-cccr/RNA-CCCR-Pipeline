@@ -72,7 +72,21 @@ will load all above. Please run this after you load FastQC
 ```bash
 To run DOCKER follow these instructions: 
 
+1. Login to any of the BiG servers(prefer hedy)
+2. Make sure you before you download the docker image you set up temp and cache at a location which has space.
+	mkdir -p <YOUR_DIR>/singularity_cache
+	mkdir -p  <YOUR_DIR>/singularity_tmp
+	export SINGULARITY_CACHEDIR=$HOME/singularity_cache
+	export SINGULARITY_TMPDIR=$HOME/singularity_tmp
+3.Pull docker image (.sif file)
+	singularity pull  docker://ghcr.io/chop-cccr/rna-cccr-pipeline:latest
+4. An example command is in run_docker_cmd.sh.
+5. Make sure your bind directories: 
+	bind (your path which has the references and samplesheet). In the example in the run_docker_cmd.sh file,  the Reference folder is located under 
+	pwd -> location where you are working and need your output
 
+
+## Command used to run docker image ##
 unset LD_PRELOAD
 singularity exec \
 --bind <PATH_TO_REFRENCE AND DATA>,  \
