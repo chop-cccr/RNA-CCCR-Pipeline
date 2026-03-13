@@ -174,7 +174,9 @@ nextflow run main.nf -profile docker
   --species mouse
 
 ```
+
 ## Inputs
+
 ```bash
 --samplesheet CSV with columns:
 
