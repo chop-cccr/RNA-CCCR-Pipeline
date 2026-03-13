@@ -126,7 +126,6 @@ nextflow run main_final.nf --max_memory 64G -profile standard \
 ## Download reference files
 ```bash
 
-# Download reference files
 
 To download reference files for mouse and humans, use script fetch_reference.sh
 ./fetch_reference.sh 
@@ -139,7 +138,8 @@ This will download the reference folder to the user defined path
 
 ```
 
-## Input files
+
+## Input
 In the assets folder, you will find an example samplesheet that the pipeline can accept.
 ``` bash
 
