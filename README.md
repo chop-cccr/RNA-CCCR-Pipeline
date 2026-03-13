@@ -74,7 +74,7 @@ will load all above. Please run this after you load FastQC
 ```
 
 ```bash
-Contents
+## Contents
 -[Run HPC](#run_hpc)
 -[Run Docker](#run_docker)
 
