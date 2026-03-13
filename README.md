@@ -155,12 +155,10 @@ read_group (optional; default added if missing)
 
 At this point this pipeline only runs PE (Paired end)
 --species: human or mouse. For other species, use custom references.
-```
 
-
-
-```
 USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same or different.
+
+```
 
 ## Quick start
 ```bash
