@@ -173,8 +173,9 @@ nextflow run main.nf -profile docker
   --samplesheet my_samples.csv 
   --species mouse
 
-
-Inputs
+```
+## Inputs
+```bash
 --samplesheet CSV with columns:
 
 sample_id (unique)
@@ -185,9 +186,11 @@ read_group (optional; default added if missing)
 
 At this point this pipeline only runs PE (Paired end)
 --species: human or mouse. For other species, use custom references.
+```
 
-Reference options
 
+## Reference options
+```bash
 Presets (edit in main.nf): hard‑coded cluster paths for GRCh38/GRCm39.
 
 Custom prebuilt indices:
@@ -199,8 +202,9 @@ Build on the fly from FASTA+GTF:
 
 --build_index --fasta /ref/genome.fa --gtf /ref/genes.gtf [--sjdbOverhang 100]
 ```
+
+## Outputs
 ``` bash
-Outputs
 RESULT_directory/
 ├── star/
 │   ├── <sample>.Aligned.sortedByCoord.out.bam
