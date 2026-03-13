@@ -37,6 +37,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 
 ## SETUP before running nextflow pipeline
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
+#Run HPC
 ```bash
 
 # To install and run FASTQC
@@ -69,10 +70,12 @@ will load all above. Please run this after you load FastQC
 
 ```
 
+```bash
 Contents
+-[Run HPC](#run_hpc)
 -[Run Docker](#run_docker)
 
-
+```
 
 ## Run Docker
 ```bash
