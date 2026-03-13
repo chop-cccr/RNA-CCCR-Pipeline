@@ -167,11 +167,6 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same 
 
 ** Also make sure your config file paths in nextflow.config points to the directory conf (in the repository)
 
-(Under construction)
-With Docker
-nextflow run main.nf -profile docker 
-  --samplesheet my_samples.csv 
-  --species mouse
 
 ```
 
