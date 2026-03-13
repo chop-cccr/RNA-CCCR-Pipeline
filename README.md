@@ -39,7 +39,7 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
 
 
-##Run HPC
+## Run HPC
 
 ```bash
 
