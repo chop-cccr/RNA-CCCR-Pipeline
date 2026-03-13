@@ -139,7 +139,7 @@ This will download the reference folder to the user defined path
 ```
 
 
-## Input
+## Input Files
 In the assets folder, you will find an example samplesheet that the pipeline can accept.
 ``` bash
 
