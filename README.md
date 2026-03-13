@@ -13,7 +13,6 @@
 - [Download Reference Files](#download-reference-files)
 - [Input Files](#input-files)
 - [Quick Start](#quick-start)
-- [Inputs](#inputs)
 - [Reference Options](#reference-options)
 - [Outputs](#outputs)
 
@@ -145,6 +144,21 @@ In the assets folder, you will find an example samplesheet that the pipeline can
 
 sample,fastq1,fastq2,read_group
 USER_SAMPLE_ID,/mnt/isilon/cccr_bfx/Pipelines/Independent/data/SRR2557083_1.fastq.gz,/mnt/isilon/cccr_bfx/Pipelines/Independent/data/SRR2557083_2.fastq.gz,ID:ANY_ID
+
+--samplesheet CSV with columns:
+
+sample_id (unique)
+fastq_1 (path to R1)
+fastq_2 (path to R2)
+read_group (optional; default added if missing)
+
+
+At this point this pipeline only runs PE (Paired end)
+--species: human or mouse. For other species, use custom references.
+```
+
+
+
 ```
 USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same or different.
 
@@ -169,22 +183,6 @@ USER_SAMPLE_ID and ANY_ID is user input and cannot be skipped. They can be same 
 
 
 ```
-
-## Inputs
-
-```bash
---samplesheet CSV with columns:
-
-sample_id (unique)
-fastq_1 (path to R1)
-fastq_2 (path to R2)
-read_group (optional; default added if missing)
-
-
-At this point this pipeline only runs PE (Paired end)
---species: human or mouse. For other species, use custom references.
-```
-
 
 ## Reference options
 ```bash
