@@ -2,10 +2,25 @@
 
 # STAR + RSEM (human/mouse) – Nextflow DSL2
 
+## Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Steps to Make Sure It Runs Smoothly](#steps-to-make-sure-it-runs-smoothly)
+- [Setup Before Running Nextflow Pipeline](#setup-before-running-nextflow-pipeline)
+- [Run on HPC](#run-on-hpc)
+- [Run Docker](#run-docker)
+- [Download Reference Files](#download-reference-files)
+- [Input Files](#input-files)
+- [Quick Start](#quick-start)
+- [Inputs](#inputs)
+- [Reference Options](#reference-options)
+- [Outputs](#outputs)
+
 
 A simple, reliable pipeline for aligning RNA‑seq reads with [STAR] and quantifying with [RSEM]. Works on  HPC with Docker/Singularity/Conda. Also a built in docker image can be used for deployment.
 
-# Introduction:
+## Introduction:
 STAR (Spliced Transcripts Alignment to a Reference) [1] is an ultrafast splice-aware aligner for RNA-seq that maps reads to genomes, detects canonical/non-canonical splice junctions, and supports two-pass mapping to improve novel junction discovery; it’s commonly used upstream of quantifiers like RSEM. 
 
 RSEM (RNA-Seq by Expectation-Maximization) [2] estimates gene- and isoform-level expression from RNA-seq data, modeling fragment/length effects and outputting TPM/FPKM and expected counts. Works with reference transcriptomes (or de novo assemblies) and supports single/paired-end and stranded protocols
@@ -35,11 +50,11 @@ Using this pipeline, user can either create new indexes of genomes or use pre-ex
 	- **Command:** `./fetch_reference.sh`
 
 
-## SETUP before running nextflow pipeline
+## Setup before running nextflow pipeline
 Load the following modules. These are necessary modules and you may run into errors if any of them are not loaded properly.
 
 
-## Run HPC
+## Run on HPC
 
 ```bash
 
@@ -73,14 +88,8 @@ will load all above. Please run this after you load FastQC
 
 ```
 
-```bash
-## Contents
--[Run HPC](#run_hpc)
--[Run Docker](#run_docker)
 
-```
-
-## Run Docker
+## Run on Docker
 ```bash
 To run DOCKER follow these instructions: 
 
@@ -113,9 +122,11 @@ nextflow run main_final.nf --max_memory 64G -profile standard \
 
 
 ```
+
+## Download reference files
 ```bash
 
-Download reference files
+# Download reference files
 
 To download reference files for mouse and humans, use script fetch_reference.sh
 ./fetch_reference.sh 
