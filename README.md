@@ -9,7 +9,7 @@
 - [Steps to Make Sure It Runs Smoothly](#steps-to-make-sure-it-runs-smoothly)
 - [Setup Before Running Nextflow Pipeline](#setup-before-running-nextflow-pipeline)
 - [Run on HPC](#run-on-hpc)
-- [Run Docker](#run-docker)
+- [Run using Docker](#run-using-docker)
 - [Download Reference Files](#download-reference-files)
 - [Input Files](#input-files)
 - [Quick Start](#quick-start)
@@ -88,7 +88,7 @@ will load all above. Please run this after you load FastQC
 ```
 
 
-## Run on Docker
+## Run using Docker
 ```bash
 To run DOCKER follow these instructions: 
 
